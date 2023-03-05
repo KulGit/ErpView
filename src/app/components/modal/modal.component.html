@@ -1,0 +1,27 @@
+<div class="form-container">
+    <form [formGroup]="form">
+        <div>
+            <h2> State</h2>
+            <label></label>
+            <input
+            formControlName="state"
+            >
+        </div>
+        <div>
+            <h2> Capital</h2>
+            <label></label>
+
+            <select class="select-option" formControlName="capital">
+                <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+            </select>
+    
+        </div>
+
+
+
+        <br>
+        <button (click)="onSubmit()" [disabled]="form.invalid">Изменить</button>
+        <button (click)="closeModal()"> Отмена </button>
+    </form>
+</div>
+

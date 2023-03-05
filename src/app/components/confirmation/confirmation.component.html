@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Подтвердите действие</h2>
+<div mat-dialog-content>
+  <p>{{ message }}</p>
+</div>
+<div mat-dialog-actions>
+    <button class="button" mat-button (click)="onNoClick()">Отмена</button>
+    <button class="button" mat-button color="primary" (click)="onYesClick()">Подтверждаю</button>
+</div>
+
