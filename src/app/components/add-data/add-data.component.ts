@@ -41,4 +41,8 @@ export class AddDataComponent implements OnInit {
     this.dialogRef.close()
   }
 
+  public close() {
+    this.dialogRef.close()
+  }
+
 }
