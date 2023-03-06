@@ -1,29 +1,52 @@
 <div class="form-container">
     <form [formGroup]="form" (ngSubmit)="addNewData()">
-        <div>
+
+        <div class="dx-field">
             <h2> Your ID</h2>
-            <label></label>
-            <input
-            formControlName="id"
-            >
+              <dx-text-box             
+              formControlName="id"
+             >
+              </dx-text-box>
         </div>
-        <div>
+
+        <div class="dx-field">
             <h2> State</h2>
-            <label></label>
-            <input
-            formControlName="state"
-            >
+              <dx-text-box             
+              formControlName="state"
+              >
+              </dx-text-box>
         </div>
-        <div>
-            <h2> Capital</h2>
-            <label></label>
-            <input
-            formControlName="capital"
-            >
+
+        <div class="dx-field">
+            <h2> Capital </h2>
+              <dx-text-box             
+              formControlName="capital"
+              >
+              </dx-text-box>
         </div>
+
         <br>
-        <button [disabled]="form.invalid">Добавить</button>
-        <button (click)="close()"> Отмена </button>
+
+        <dx-button
+            class="dx-button"
+            stylingMode="contained"
+            text="Добавить"
+            type="default"
+            [width]="120"
+            [disabled]="form.invalid"
+            (onClick)="addNewData()" 
+            >
+        </dx-button>
+
+        <dx-button
+            stylingMode="contained"
+            text="Отмена"
+            type="default"
+            [width]="120"
+            (onClick)="close()" 
+            >
+        </dx-button>
+        
     </form>
 </div>
 

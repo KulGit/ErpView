@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DxButtonModule, DxDataGridModule, DxDropDownBoxModule, DxListModule, DxPopupModule } from 'devextreme-angular';
+import { DxButtonModule, DxDataGridModule, DxDropDownBoxModule, DxListModule, DxPopupModule, DxSelectBoxModule, DxTextBoxModule } from 'devextreme-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,7 +29,9 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     ReactiveFormsModule,
     MatDialogModule,
     DxPopupModule,
-    FormsModule
+    FormsModule,
+    DxTextBoxModule,
+    DxSelectBoxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

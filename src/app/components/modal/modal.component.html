@@ -1,24 +1,55 @@
 <div class="form-container">
     <form [formGroup]="form">
-        <div>
-            <h2> State</h2>
-            <label></label>
-            <input
-            formControlName="state"
-            >
-        </div>
-        <div>
-            <h2> Capital</h2>
-            <label></label>
 
-            <select class="select-option" formControlName="capital">
-                <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
-            </select>
-    
+        <div class="dx-field">
+            <h2> State</h2>
+              <dx-text-box             
+              formControlName="state"
+              >
+              </dx-text-box>
+        </div>
+
+
+        <div class="dx-field">
+            <h2> Capital</h2>
+            <dx-select-box
+            formControlName="capital"
+            [dataSource]="products"
+            displayExpr="Capital"
+            valueExpr="Capital"
+            [searchMode]="searchModeOption"
+            [searchExpr]="searchExprOption"
+            [searchTimeout]="searchTimeoutOption"
+            [minSearchLength]="minSearchLengthOption"
+            [searchEnabled]="true"
+            [showDataBeforeSearch]="showDataBeforeSearchOption"
+            ></dx-select-box>
         </div>
         <br>
-        <button (click)="onSubmit()" [disabled]="form.invalid">Изменить</button>
-        <button (click)="closeModal()"> Отмена </button>
+
+
+
+        <dx-button
+            class="dx-button"
+            stylingMode="contained"
+            text="Изменить"
+            type="default"
+            [width]="120"
+            [disabled]="form.invalid"
+            (onClick)="onSubmit()" 
+          >
+        </dx-button>
+
+        <dx-button
+        stylingMode="contained"
+        text="Отмена"
+        type="default"
+        [width]="120"
+        (onClick)="closeModal()" 
+        >
+        </dx-button>
+
+
     </form>
 </div>
 

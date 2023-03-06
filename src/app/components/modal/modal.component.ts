@@ -15,7 +15,47 @@ export class ModalComponent implements OnInit {
   state: string = '';
   capital: string = '';
 
-  options = [  { label: 'Montgomery', value: 'montgomery' },  { label: 'Phoenix', value: 'phoenix' },  { label: 'Washington', value: 'washington' }];
+
+  searchModeOption = 'contains';
+
+  searchExprOption: any = 'Capital';
+
+  searchTimeoutOption = 200;
+
+  minSearchLengthOption = 0;
+
+  showDataBeforeSearchOption = false;
+
+
+  // { id: 1, state: "Alabama", capital: "Montgomery" },
+  // { id: 2, state: "Alaska", capital: "Juneau" },
+  // { id: 3, state: "Arizona", capital: "Phoenix" },
+  // { id: 4, state: "Florida", capital: "Kentuki" },
+  // { id: 5, state: "New York", capital: "Washington" },
+
+
+  products: any = [{
+    ID: 1,
+    State: 'Alabama',
+    Capital: "Montgomery",
+  }, {
+    ID: 2,
+    State: 'Alaska',
+    Capital: "Juneau",
+  }, {
+    ID: 3,
+    State: 'Arizona',
+    Capital: "Phoenix",
+  }, {
+    ID: 4,
+    State: 'Florida',
+    Capital: "Kentuki",
+  }, {
+    ID: 5,
+    State: 'New York',
+    Capital: "Washington",
+  }
+]
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,

@@ -3,7 +3,28 @@
   <p>{{ message }}</p>
 </div>
 <div mat-dialog-actions>
-    <button class="button" mat-button (click)="onNoClick()">Отмена</button>
-    <button class="button" mat-button color="primary" (click)="onYesClick()">Подтверждаю</button>
+    <!-- <button class="button" mat-button (click)="onNoClick()">Отмена</button>
+    <button class="button" mat-button color="primary" (click)="onYesClick()">Подтверждаю</button> -->
+
+
+  <dx-button
+  class="dx-button"
+  stylingMode="contained"
+  text="Отмена"
+  type="default"
+  [width]="120"
+  (onClick)="onNoClick()" 
+  >
+  </dx-button>
+
+  <dx-button
+      stylingMode="contained"
+      text="Подтверждаю"
+      type="default"
+      [width]="120"
+      (onClick)="onYesClick()" 
+      >
+  </dx-button>
+
 </div>
 
