@@ -1,0 +1,24 @@
+.wraper {
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 230px;
+
+    .image {
+        margin: 0 auto;
+        width: 210px;
+        height: 210px;
+        margin-bottom: 40px;
+    }
+
+    .description {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        min-height: 45px;
+    }
+
+    button {
+        width: 210px;
+        height: 80px;
+    }
+}

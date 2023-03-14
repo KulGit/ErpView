@@ -1,0 +1,24 @@
+.main-panel {
+    display: flex;
+    justify-content: space-around;
+
+    .link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .image {
+            width: 100px;
+            height: 100px;
+        }
+
+        .dx-menu {
+            margin-top: 15px;
+        }
+
+    }
+}
+.tab-panel {
+    min-height: 800px;
+    min-width: 800px;
+}

@@ -1,0 +1,62 @@
+<p>market works!</p>
+
+<div class="main-panel">
+    <div class="item">
+        <a routerLink="/main-menu" class="link">
+            <img src="./../../../assets/circle.jpg" class="image">
+            <p>Касса</p>
+        </a>
+    </div>
+    <div class="item">
+        <a class="link">
+            <img src="./../../../assets/circle.jpg" class="image">
+            <p>Товары для кассы</p>
+        </a>
+    </div>
+    <div class="item">
+        <a class="link">
+            <img src="./../../../assets/circle.jpg" class="image">
+            <dx-menu
+            #menu
+            [dataSource]="documents"
+            displayExpr="name"
+            [showFirstSubmenuMode]="showFirstSubmenuModes"
+            orientation="horizontal"
+            [hideSubmenuOnMouseLeave]="false"
+            (onItemClick)="itemClick($event)"
+          >
+          </dx-menu>
+        </a>
+    </div>
+    <div class="item">
+        <a class="link">
+            <img src="./../../../assets/circle.jpg" class="image">
+            <dx-menu
+            class="dx-menu"
+            #menu
+            [dataSource]="catalogs"
+            displayExpr="name"
+            [showFirstSubmenuMode]="showFirstSubmenuModes"
+            orientation="horizontal"
+            [hideSubmenuOnMouseLeave]="false"
+            (onItemClick)="itemClick($event)"
+          >
+          </dx-menu>
+        </a>
+    </div>
+    <div class="item">
+        <a routerLink="/main-menu" class="link">
+            <img src="./../../../assets/circle.jpg" class="image">
+            <p>Остатки</p>
+        </a>
+    </div>
+
+</div>
+<div class="tab-panel">
+    <mat-tab-group>
+        <a></a><mat-tab label="Tab 1" routerLink="good-values"></mat-tab>
+        <mat-tab label="Tab 2" routerLink="/tab-panel"></mat-tab>
+        <mat-tab label="Tab 3" routerLink="/good-values"></mat-tab>
+    </mat-tab-group>
+    <router-outlet></router-outlet>
+</div>

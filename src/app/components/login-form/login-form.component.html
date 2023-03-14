@@ -1,23 +1,35 @@
+<div class="wraper">
+    <img src="./../../../assets/logo.jpg" class="logo" alt="logo">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="dx-field">
+            <h2> ЛОГИН / EMAIL</h2>
+              <dx-text-box             
+              formControlName="login"
+             >
+              </dx-text-box>
+        </div>
+        <div class="dx-field">
+            <h2> ПАРОЛЬ</h2>
+              <dx-text-box             
+              formControlName="password"
+             >
+              </dx-text-box>
+        </div>
+        <div class="remind">
+            <input type="checkbox">
+            <p>Запомнить меня</p>
+        </div>
+        <div class="footer">
+            <button [disabled]="form.invalid">Вход</button>
+            <div>
+                <a>Забыли пароль?</a>
+            </div>
+        </div>
+        <br>
+    </form>
+</div>
 
-    <div class="dx-field">
-        <h2> Enter your login</h2>
-          <dx-text-box             
-          formControlName="login"
-         >
-          </dx-text-box>
-    </div>
-    <div class="dx-field">
-        <h2> Enter your password</h2>
-          <dx-text-box             
-          formControlName="password"
-         >
-          </dx-text-box>
-    </div>
-    <br>
-    <button [disabled]="form.invalid">Login</button>
-</form>
 <br>
 <div>
     <button (click)="goValues()">Enter in backend</button>

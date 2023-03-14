@@ -4,6 +4,12 @@ export interface User {
 }
 
 export interface Goods {
-    id: number;
-    value: string;
+    id: number,
+    value: string
+}
+
+export interface Documents {
+    id: number,
+    name: string,
+    items: any
 }

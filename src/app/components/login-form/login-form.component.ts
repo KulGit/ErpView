@@ -28,20 +28,19 @@ export class LoginFormComponent implements OnInit {
   }
 
   public onSubmit() {
-    console.log(this.form.get('login')?.value)
-
-    
     this.user = {
       username: this.form.get('login')?.value,
       password: this.form.get('password')?.value
     }
 
-    this.auth.login(this.user).subscribe( (res: any) => { 
-      localStorage.setItem('token777', res.token.toString()),
-      (error: any) => console.log(error)
-    })
 
-      this.router.navigate(['/', 'main'])
+    this.auth.login(this.user).subscribe((res: boolean) => {
+      if (res) {
+        this.router.navigate(['/', 'main-menu'])
+      } else {
+        console.log('No right credentials')
+      }
+    })
   }
 
 
