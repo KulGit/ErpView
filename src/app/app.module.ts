@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DxButtonModule, DxDataGridModule, DxDropDownBoxModule, DxListModule, DxPopupModule, DxSelectBoxModule, DxTextBoxModule } from 'devextreme-angular';
+import { DxButtonModule, DxDataGridModule, DxDropDownBoxModule, DxListModule, DxPopupModule, DxSelectBoxModule, DxSortableModule, DxTabPanelModule, DxTemplateModule, DxTextBoxModule } from 'devextreme-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AddDataComponent } from './components/add-data/add-data.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { GoodValuesComponent } from './components/good-values/good-values.component';
+import { JwtinterceptorInterceptor } from './services/jwtinterceptor.interceptor';
+import { TabpanelComponent } from './components/tabpanel/tabpanel.component';
+import { Service } from './services/tab-data.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,10 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     ModalComponent,
     AddDataComponent,
     LoginFormComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    MainPageComponent,
+    GoodValuesComponent,
+    TabpanelComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +40,17 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     DxPopupModule,
     FormsModule,
     DxTextBoxModule,
-    DxSelectBoxModule
+    DxSelectBoxModule,
+    HttpClientModule,
+    DxSortableModule,
+    DxTabPanelModule,
+    DxListModule,
+    DxTemplateModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtinterceptorInterceptor, multi: true },
+    Service
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

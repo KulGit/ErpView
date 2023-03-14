@@ -1,0 +1,14 @@
+
+<div *ngIf="data">
+    <dx-data-grid
+    class="grid"
+    [dataSource]="data.data"
+    keyExpr="ID"
+    
+    [focusedRowEnabled]="true"
+    [focusedRowIndex]="0" 
+    [focusedColumnIndex]="0" 
+    (onRowClick)="selectState($event)"
+    >
+    </dx-data-grid>
+</div>

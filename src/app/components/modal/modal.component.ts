@@ -26,14 +26,6 @@ export class ModalComponent implements OnInit {
 
   showDataBeforeSearchOption = false;
 
-
-  // { id: 1, state: "Alabama", capital: "Montgomery" },
-  // { id: 2, state: "Alaska", capital: "Juneau" },
-  // { id: 3, state: "Arizona", capital: "Phoenix" },
-  // { id: 4, state: "Florida", capital: "Kentuki" },
-  // { id: 5, state: "New York", capital: "Washington" },
-
-
   products: any = [{
     ID: 1,
     State: 'Alabama',

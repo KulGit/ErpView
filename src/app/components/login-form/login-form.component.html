@@ -1,23 +1,33 @@
-<p>login-form works!</p>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div>
+
+    <div class="dx-field">
         <h2> Enter your login</h2>
-        <label></label>
-        <input
-        formControlName="login"
-        >
+          <dx-text-box             
+          formControlName="login"
+         >
+          </dx-text-box>
     </div>
-    <div>
+    <div class="dx-field">
         <h2> Enter your password</h2>
-        <label></label>
-        <input
-        formControlName="password"
-        >
+          <dx-text-box             
+          formControlName="password"
+         >
+          </dx-text-box>
     </div>
+    <br>
     <button [disabled]="form.invalid">Login</button>
 </form>
 <br>
 <div>
+    <button (click)="goValues()">Enter in backend</button>
+</div>
+<br>
+<div>
+    <button (click)="goTabpanel()">Working with Tab Panel</button>
+</div>
+<br>
+<div>
     <button (click)="logout()">Logout</button>
 </div>
+

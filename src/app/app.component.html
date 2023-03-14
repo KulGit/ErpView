@@ -1,33 +1,3 @@
 <div class="wraper">
-  <div class="buttons">
-    <button (click)="getData()"> Первоначальные данные</button>
-    <button (click)="deleteData()">Удаление</button>
-    <button (click)="openModal()">Изменить</button>
-    <button (click)="changeData()">Добавить данные</button>
-  </div>
-  
-  <dx-data-grid
-    class="grid"
-    [dataSource]="storeData"
-    keyExpr="id"
-  
-    [focusedRowEnabled]="true"
-    [focusedRowIndex]="0" 
-    [focusedColumnIndex]="0" 
-    (onRowClick)="selectState($event)"
-  
-  >
-  </dx-data-grid>
-  <dx-popup
-    [(visible)]="popUp"
-    [dragEnabled]="true"
-    position="center"
-    [height]="500"
-    [width]="500"
-  >
-  <div>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa obcaecati accusantium blanditiis officia voluptatem aliquid iure asperiores aperiam? Incidunt commodi aliquid ullam nobis voluptas quisquam at tempore nesciunt, sapiente cumque.</p>
-  </div>
-
-  </dx-popup>
+  <router-outlet></router-outlet>
 </div>

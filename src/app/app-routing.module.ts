@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { GoodValuesComponent } from './components/good-values/good-values.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
+import { TabpanelComponent } from './components/tabpanel/tabpanel.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginFormComponent },
-  { path: ' ', component: AppComponent }
+  { path: '', component: LoginFormComponent },
+  { path: 'main', component: MainPageComponent },
+  {path: 'good-values', component: GoodValuesComponent},
+  {path: 'tab-panel', component: TabpanelComponent}
 ];
 
 @NgModule({
